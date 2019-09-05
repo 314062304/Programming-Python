@@ -1,0 +1,85 @@
+C:\Windows\System32>python
+Python 3.6.6 (v3.6.6:4cf1f54eb7, Jun 27 2018, 03:37:03) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+
+>>> mystr = 'xxxSPAMxxx'
+>>> mystr.find('SPAM')              # 返回首个匹配的位置偏移
+3
+>>> mystr = 'xxxaaxxxaa'
+>>> mystr.replace('aa', 'SPAM')     # 全局替换
+'xxxSPAMxxxSPAM'
+
+
+>>> mystr = 'xxxSPAMxxx'
+>>> 'SPAM' in mystr                 # 子字符串搜索/测试,找到为True
+True
+>>> 'Ni' in mystr                   # 没找到时为False
+False
+>>> mystr.find('Ni')
+-1
+
+
+>>> mystr = '\t Ni\n'
+>>> mystr.strip()                   # 取出空白分隔符
+'Ni'
+>>> mystr.rstrip()                  # 同上，不过是在右侧进行
+'\t Ni'
+>>> mystr.lstrip()                  # 同上，不过是在左侧进行
+'Ni\n'
+
+
+>>> mystr = 'SHRUBBERY'
+>>> mystr.lower()                   # 大小写转换器
+'shrubbery'
+>>>
+>>> mystr.isalpha()                 # 内容测试
+True
+>>> mystr.isdigit()
+False
+>>>
+>>> import string                   # 环境预设：可在'in'等语句中使用
+>>> string.ascii_lowercase
+'abcdefghijklmnopqrstuvwxyz'
+>>> string.whitespace               # 空白分隔符
+' \t\n\r\x0b\x0c'
+
+
+>>> mystr = 'aaa,bbb,ccc'
+>>> mystr.split()
+['aaa,bbb,ccc']
+>>> mystr.split(',')
+['aaa', 'bbb', 'ccc']               # 分割为子字符串组成的列表
+>>> mystr = 'a b\nc\nd'
+>>> mystr.split()                   # 默认分隔符：泛空格符
+['a', 'b', 'c', 'd']
+>>>
+>>> delim = 'Ni'
+>>> delim.join(['aaa','bbb','ccc'])     # 连接子字符串列表
+'aaaNibbbNiccc'
+>>>
+>>> ' '.join(['A', 'dead', 'parrot'])   # 在其间添加空格符
+'A dead parrot'
+>>>
+>>> chars = list('Lorreta')         # 转换为字符组成的列表
+>>> chars
+['L', 'o', 'r', 'r', 'e', 't', 'a']
+>>> chars.append('!')
+>>> ''.join(chars)                  # 生成字符串：分隔符为空
+'Lorreta!'
+
+
+>>> mystr = 'xxaaxxaa'
+>>> 'SPAM'.join(mystr.split('aa'))  # str.replace，有难度的方式！(结合split和join模拟replace)
+'xxSPAMxxSPAM'
+
+
+>>> int('42'), eval('42')           # 字符串转换为整型
+(42, 42)
+>>> str(42), repr(42)               # 整型转换为字符串
+('42', '42')
+>>>
+>>> ('%d' % 42), '{:d}'.format(42)  # 分别借助格式化表达式和方法
+('42', '42')
+>>>
+>>> '42' + str(1), int('42') + 1    # 分别为连接和加法
+('421', 43)

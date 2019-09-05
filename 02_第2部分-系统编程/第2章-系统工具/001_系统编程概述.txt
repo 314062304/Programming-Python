@@ -1,0 +1,10 @@
+C:\WINDOWS\system32>python
+Python 3.6.6 (v3.6.6:4cf1f54eb7, Jun 27 2018, 03:37:03) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sys, os
+>>> len(dir(sys))		# 85个属性
+85
+>>> len(dir(os))		# Windows下显示152条，Unix下更多
+152
+>>> len(dir(os.path))	# 嵌套在os里的一个模块
+56

@@ -1,0 +1,17 @@
+glob：
+    用于文件名扩展
+
+socket:
+    用于网络连接和进程间通信（IPC）
+
+threading，_thread， queue：
+    用于运行和同步化并发进程
+
+time，timeit：
+    用于获取系统时间和相关细节
+
+subprocess，multiprocessing：
+    用于启动和控制并行进程
+
+signal，select，shutil，tempfile：
+    用于多种系统相关任务

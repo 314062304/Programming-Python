@@ -1,0 +1,14 @@
+open('file').read()                     # 将整个文件读取为字符串
+open('file').read(N)                    # 将后边N个字节读取为字符串
+open('file').readlines()                # 将整个文件读取为单行字符串组成的列表
+open('file').readline()                 # 跨过'\n'读取下一行
+
+>>> file = open('spam.txt', 'w')        # 创建文件 spam.txt
+>>> file.write(('spam' * 5) + '\n')     # 写入文本：返回所写入的#个字符
+21
+>>> file.close()
+>>>
+>>> file = open('spam.txt')             # 或者用open('spam.txt').read()
+>>> text = file.read()                  # 读取为字符串
+>>> text
+'spamspamspamspamspam\n'
